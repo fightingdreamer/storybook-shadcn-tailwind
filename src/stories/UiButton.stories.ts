@@ -15,7 +15,7 @@ const meta = {
     backgroundColor: { control: "color" },
   },
   args: {
-    default: `Default slot content`,
+    default: `Click me!`,
     primary: false,
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     onClick: fn(),
@@ -25,7 +25,7 @@ const meta = {
     setup() {
       return { args };
     },
-    template: '<Button v-bind="args">Click Me</Button>',
+    template: `<Button v-bind="args">${args.default}</Button>`,
   }),
 } satisfies Meta<typeof Button>;
 
